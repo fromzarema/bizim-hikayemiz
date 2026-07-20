@@ -93,7 +93,29 @@ function showFinal(){
     startHearts();
 
     setTimeout(()=>{
+       let volume = music.volume;
 
+    const fade = setInterval(()=>{
+
+        volume -= 0.05;
+
+        if(volume <= 0){
+
+            music.volume = 0;
+            clearInterval(fade);
+            music.pause();
+
+        } else {
+
+            music.volume = volume;
+
+        }
+
+    },400);
+
+},21000);  
+    
+}
         finalText.classList.add("show");
 
     },1500);
