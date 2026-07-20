@@ -143,6 +143,6 @@ function startHearts(){
 
     },500);
 
-    setTimeout(()=>clearInterval(interval),12000);
+    setTimeout(()=>clearInterval(interval),20000);
 
 }
