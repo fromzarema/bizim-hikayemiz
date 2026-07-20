@@ -99,6 +99,7 @@ function showFinal(){
     },1500);
 
     // плавное затухание музыки
+    /*
     let volume = music.volume;
 
     const fade = setInterval(()=>{
@@ -117,6 +118,7 @@ function showFinal(){
         }
 
     },400);
+    */
 
 }
 function startHearts(){
