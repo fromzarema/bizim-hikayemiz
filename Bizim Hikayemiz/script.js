@@ -119,6 +119,13 @@ function showFinal(){
     },400);
 
 }
+    // Через 15 секунд после финального кадра начинаем сначала
+    setTimeout(() => {
+
+        location.reload();
+
+    }, 15000);
+
 function startHearts(){
 
     const interval = setInterval(()=>{
