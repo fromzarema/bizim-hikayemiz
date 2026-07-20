@@ -19,6 +19,7 @@ const photos = [
     "photos/18.jpg"
 ];
 
+
 const intro = document.getElementById("intro");
 const slideshow = document.getElementById("slideshow");
 const startButton = document.getElementById("startButton");
@@ -30,7 +31,10 @@ const finalImage = document.getElementById("finalImage");
 const finalText = document.getElementById("finalText");
 const hearts = document.getElementById("hearts");
 
+
 let index = 0;
+
+
 
 startButton.addEventListener("click", () => {
 
@@ -44,7 +48,8 @@ startButton.addEventListener("click", () => {
 });
 
 
-function showPhoto() {
+
+function showPhoto(){
 
     if(index >= photos.length){
 
@@ -53,24 +58,40 @@ function showPhoto() {
 
     }
 
-    photo.src = photos[index];
 
-    photo.classList.add("show");
+    photo.classList.remove("show");
+
 
     setTimeout(()=>{
 
-        photo.classList.remove("show");
 
-        setTimeout(()=>{
+        photo.src = photos[index];
 
-            index++;
-            showPhoto();
 
-        },1200);
+        photo.onload = ()=>{
 
-    },5000);
+            photo.classList.add("show");
+
+        };
+
+
+        index++;
+
+
+    },700);
+
+
+
+    setTimeout(()=>{
+
+        showPhoto();
+
+    },5700);
+
 
 }
+
+
 
 
 function showVideo(){
@@ -79,15 +100,19 @@ function showVideo(){
 
     video.play();
 
+
     video.onended = ()=>{
 
         video.classList.remove("show");
 
         setTimeout(showFinal,1000);
 
-    }
+    };
 
 }
+
+
+
 
 
 function showFinal(){
@@ -104,25 +129,34 @@ function showFinal(){
     },1500);
 
 
+
     setTimeout(()=>{
+
 
         let volume = music.volume;
 
+
         const fade = setInterval(()=>{
 
-            volume -= 0.05;
 
-            if(volume <= 0){
+            volume -=0.05;
 
-                music.volume = 0;
+
+            if(volume <=0){
+
+                music.volume=0;
+
                 clearInterval(fade);
+
                 music.pause();
 
-            } else {
 
-                music.volume = volume;
+            }else{
+
+                music.volume=volume;
 
             }
+
 
         },400);
 
@@ -133,23 +167,34 @@ function showFinal(){
 
 
 
+
+
 function startHearts(){
 
-    const interval = setInterval(()=>{
 
-        const heart = document.createElement("div");
+    const interval=setInterval(()=>{
 
-        heart.className = "heart";
 
-        heart.innerHTML = "❤️";
+        const heart=document.createElement("div");
 
-        heart.style.left = Math.random()*100 + "%";
 
-        heart.style.fontSize = (18 + Math.random()*18) + "px";
+        heart.className="heart";
 
-        heart.style.animationDuration = (5 + Math.random()*3) + "s";
+
+        heart.innerHTML="❤️";
+
+
+        heart.style.left=Math.random()*100+"%";
+
+
+        heart.style.fontSize=(18+Math.random()*18)+"px";
+
+
+        heart.style.animationDuration=(5+Math.random()*3)+"s";
+
 
         hearts.appendChild(heart);
+
 
 
         setTimeout(()=>{
@@ -159,7 +204,9 @@ function startHearts(){
         },8000);
 
 
+
     },500);
+
 
 
     setTimeout(()=>{
@@ -167,5 +214,6 @@ function startHearts(){
         clearInterval(interval);
 
     },20000);
+
 
 }
