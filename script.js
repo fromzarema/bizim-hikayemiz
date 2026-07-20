@@ -43,6 +43,7 @@ startButton.addEventListener("click", () => {
 
 });
 
+
 function showPhoto() {
 
     if(index >= photos.length){
@@ -71,6 +72,7 @@ function showPhoto() {
 
 }
 
+
 function showVideo(){
 
     video.classList.add("show");
@@ -87,62 +89,50 @@ function showVideo(){
 
 }
 
+
 function showFinal(){
 
     finalImage.classList.add("show");
+
     startHearts();
 
+
     setTimeout(()=>{
-       let volume = music.volume;
 
-    const fade = setInterval(()=>{
-
-        volume -= 0.05;
-
-        if(volume <= 0){
-
-            music.volume = 0;
-            clearInterval(fade);
-            music.pause();
-
-        } else {
-
-            music.volume = volume;
-
-        }
-
-    },400);
-
-},21000);  
-    
-}
         finalText.classList.add("show");
 
     },1500);
 
-    // плавное затухание музыки
-    /*
-    let volume = music.volume;
 
-    const fade = setInterval(()=>{
+    setTimeout(()=>{
 
-        volume -= 0.05;
+        let volume = music.volume;
 
-        if(volume <= 0){
+        const fade = setInterval(()=>{
 
-            music.volume = 0;
-            clearInterval(fade);
+            volume -= 0.05;
 
-        }else{
+            if(volume <= 0){
 
-            music.volume = volume;
+                music.volume = 0;
+                clearInterval(fade);
+                music.pause();
 
-        }
+            } else {
 
-    },400);
-    */
+                music.volume = volume;
+
+            }
+
+        },400);
+
+
+    },21000);
 
 }
+
+
+
 function startHearts(){
 
     const interval = setInterval(()=>{
@@ -151,7 +141,7 @@ function startHearts(){
 
         heart.className = "heart";
 
-        heart.innerHTML = "❤️"; 
+        heart.innerHTML = "❤️";
 
         heart.style.left = Math.random()*100 + "%";
 
@@ -161,10 +151,21 @@ function startHearts(){
 
         hearts.appendChild(heart);
 
-        setTimeout(()=>heart.remove(),8000);
+
+        setTimeout(()=>{
+
+            heart.remove();
+
+        },8000);
+
 
     },500);
 
-    setTimeout(()=>clearInterval(interval),20000);
+
+    setTimeout(()=>{
+
+        clearInterval(interval);
+
+    },20000);
 
 }
