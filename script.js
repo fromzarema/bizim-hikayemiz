@@ -35,10 +35,10 @@ const hearts = document.getElementById("hearts");
 let index = 0;
 
 
-
-startButton.addEventListener("click", () => {
+startButton.addEventListener("click", ()=>{
 
     intro.style.display = "none";
+
     slideshow.style.display = "flex";
 
     music.play();
@@ -51,9 +51,17 @@ startButton.addEventListener("click", () => {
 
 function showPhoto(){
 
+
     if(index >= photos.length){
 
-        showVideo();
+        photo.classList.remove("show");
+
+        setTimeout(()=>{
+
+            showVideo();
+
+        },1500);
+
         return;
 
     }
@@ -78,7 +86,7 @@ function showPhoto(){
         index++;
 
 
-    },700);
+    },800);
 
 
 
@@ -86,7 +94,7 @@ function showPhoto(){
 
         showPhoto();
 
-    },5700);
+    },6500);
 
 
 }
@@ -94,20 +102,32 @@ function showPhoto(){
 
 
 
+
 function showVideo(){
 
+
     video.classList.add("show");
+
 
     video.play();
 
 
+
     video.onended = ()=>{
+
 
         video.classList.remove("show");
 
-        setTimeout(showFinal,1000);
+
+        setTimeout(()=>{
+
+            showFinal();
+
+        },1000);
+
 
     };
+
 
 }
 
@@ -117,14 +137,19 @@ function showVideo(){
 
 function showFinal(){
 
+
     finalImage.classList.add("show");
+
 
     startHearts();
 
 
+
     setTimeout(()=>{
 
+
         finalText.classList.add("show");
+
 
     },1500);
 
@@ -144,16 +169,23 @@ function showFinal(){
 
             if(volume <=0){
 
-                music.volume=0;
+
+                music.volume = 0;
+
 
                 clearInterval(fade);
+
 
                 music.pause();
 
 
-            }else{
+            }
 
-                music.volume=volume;
+            else{
+
+
+                music.volume = volume;
+
 
             }
 
@@ -163,8 +195,9 @@ function showFinal(){
 
     },21000);
 
-}
 
+
+}
 
 
 
@@ -172,10 +205,10 @@ function showFinal(){
 function startHearts(){
 
 
-    const interval=setInterval(()=>{
+    const interval = setInterval(()=>{
 
 
-        const heart=document.createElement("div");
+        const heart = document.createElement("div");
 
 
         heart.className="heart";
@@ -199,7 +232,9 @@ function startHearts(){
 
         setTimeout(()=>{
 
+
             heart.remove();
+
 
         },8000);
 
@@ -211,9 +246,12 @@ function startHearts(){
 
     setTimeout(()=>{
 
+
         clearInterval(interval);
 
+
     },20000);
+
 
 
 }
