@@ -13,7 +13,6 @@ body{
 
 
 #intro{
-
     position:fixed;
     inset:0;
 
@@ -33,29 +32,20 @@ body{
 
 
 #intro h1{
-
     font-size:48px;
     font-weight:300;
-
     margin-bottom:20px;
-
 }
 
 
 #intro p{
-
     font-size:22px;
-
     opacity:.8;
-
     margin-bottom:50px;
-
 }
 
 
-
 #startButton{
-
     padding:18px 45px;
 
     border-radius:50px;
@@ -71,14 +61,11 @@ body{
     cursor:pointer;
 
     transition:.4s;
-
 }
 
 
 #startButton:hover{
-
     background:#ff4d6d;
-
 }
 
 
@@ -98,12 +85,9 @@ body{
     background:#000;
 
     overflow:hidden;
-
 }
 
 
-
-/* Фото, видео и финальный кадр */
 
 #photo,
 #video,
@@ -119,7 +103,7 @@ body{
 
     opacity:0;
 
-    transition:opacity 1.3s ease;
+    transition:opacity 1.5s ease;
 
 }
 
@@ -158,26 +142,21 @@ body{
 
     align-items:center;
 
-
     padding-bottom:70px;
-
 
     opacity:0;
 
     transform:translateY(30px);
 
-
     transition:
     opacity 2s ease,
     transform 2s ease;
-
 
     text-align:center;
 
     z-index:10;
 
 }
-
 
 
 #finalText.show{
@@ -200,10 +179,7 @@ body{
 
     color:#7A2F2F;
 
-
-    text-shadow:
-    0 2px 8px rgba(255,255,255,.45);
-
+    text-shadow:0 2px 8px rgba(255,255,255,.45);
 
     margin-bottom:15px;
 
@@ -215,17 +191,13 @@ body{
 
 #finalText p{
 
-
     font-size:28px;
 
     color:#5B3A32;
 
     font-style:italic;
 
-
-    text-shadow:
-    0 2px 6px rgba(255,255,255,.35);
-
+    text-shadow:0 2px 6px rgba(255,255,255,.35);
 
     letter-spacing:1px;
 
@@ -257,14 +229,11 @@ body{
 
     bottom:-40px;
 
-
     font-size:22px;
 
     opacity:0;
 
-
-    animation:
-    floatHeart 6s linear forwards;
+    animation:floatHeart 6s linear forwards;
 
 }
 
@@ -282,13 +251,11 @@ body{
     }
 
 
-
     15%{
 
         opacity:.8;
 
     }
-
 
 
     100%{
@@ -298,6 +265,5 @@ body{
         opacity:0;
 
     }
-
 
 }
